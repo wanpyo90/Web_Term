@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>웹플밍 텀프_쇼핑몰</title>
+    <!-- 구 버전의 인터넷 익스플로러에서 HTML5 태그를 인식하게 합니다. -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- 초기화 -->
+
+    <!-- CSS for slidesjs.com example -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- End CSS for slidesjs.com example -->
+
+    <style>
+        * {
+            margin: 0; padding: 0;
+            font: normal 12px 'Dotum';
+        }
+        a { text-decoration: none; }
+        img { border: 0; }
+        ul { list-style: none; }
+
+        body {
+            width: 980px;
+            margin: 0 auto; 
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main_header {
+            position: relative; 
+            height: 75px;
+        }
+
+        #main_header > h1.logo {
+            position: absolute;
+            left: 440px; top: 10px;
+        }
+
+        #main_header > div.login_menu {
+            position: absolute;
+            top: 10px; right: 0px;
+        }
+    </style>
+    <!-- 사이드 -->
+    <style>
+        body {
+            position: relative;
+        }
+
+        #global_aside {
+            position: absolute;
+            left: 990px; top: 75px;
+            width: 90px;
+        }
+
+        #global_aside > a {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+    <!-- 네비게이션_위 -->
+    <style>
+        /* 메인 상단 메뉴바 */
+        #top_gnb {
+            position: relative;
+            height: 70px;
+        }
+
+        #top_gnb > div.top_menu {
+            position: absolute;
+            margin-right: 0px; margin-left: 0px;
+            top: 20px; left: 0px;
+        }
+    </style>        
+    <!-- 네비게이션_아래 -->
+    <style>
+        /* 메인 상단 하위 메뉴바 */
+        #bottom_gnb {
+            position: relative;
+            height: 50px;
+        }
+
+        #bottom_gnb > div.bottom_menu {
+            position: absolute;
+            top: 0px; left: 0px;
+        }
+    </style>
+    <!-- 목록 -->
+    <style>
+        #detail_list {
+            overflow: hidden;
+            padding: 10px;
+            background: #3B414D;
+            padding-bottom: 15px;
+        }
+
+        #detail_list > ul {
+            float: left;
+            width: 192px;
+        }
+        
+        #detail_list > ul > li {
+            height: 13px;
+            margin-top: 5px;
+            padding: 3px 5px;
+            color: #F3F3F3;
+            
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #detail_list > ul > li.header {
+            padding-left: 15px;
+        }
+
+        #detail_list > ul > li.header > p {
+            font-weight: bold;
+            color: #48C5FF;
+        }
+    </style>
+    <!-- 본문 -->
+    <style>
+        #content { margin-top: 10px; }
+        #product_section {
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        #product_section > #product_article {
+            float: left;
+            width: 795px;
+        }
+
+        #product_section > #product_aside {
+            float: right;
+            padding-bottom: 5px;
+            width: 170px;
+        }
+        #product_section > #product_article > img { display: block; }
+    </style>
+    <!-- 푸터 -->
+    <style>
+        #main_footer {
+            height: 50px;
+            padding: 10px;
+            margin-bottom: 10px;
+
+            background: #9C9C9C;
+            border-radius: 5px;
+
+            text-align: center;
+        }
+
+        #main_footer > h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #main_footer > h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- jquery import -->
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+
+    <header id="main_header">
+        <h1 class="logo">
+            <a href="#"><img src="http://placehold.it/180x50" /></a>
+        </h1>
+        <div class="login_menu">
+            <span><a href="#login">로그인</a></span>
+            <span><a href="#">회원가입</a></span>
+            <span><a href="#">장바구니</a></span>
+            <span><a href="#">고객센터</a></span>
+        </div>
+    </header>
+    <aside id="global_aside">
+        <a><img src="http://placehold.it/90x160" /></a>
+        <a><img src="http://placehold.it/90x160" /></a>
+        <a><img src="http://placehold.it/90x160" /></a>
+    </aside>
+
+    <nav id="top_gnb">
+        <div class="top_menu">
+            <a href="#"><img src="http://placehold.it/140x50" /></a>
+            <a href="#"><img src="http://placehold.it/140x50" /></a>
+            <a href="#"><img src="http://placehold.it/140x50" /></a>
+            <a href="#"><img src="http://placehold.it/140x50" /></a>
+        </div>
+    </nav>
+
+    <nav id="bottom_gnb">
+        <div class="bottom_menu">
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+            <a href="#"><img src="http://placehold.it/70x40" /></a>
+        </div>
+    </nav>
+
+    <div id="detail_list">
+        <ul class="column_1">
+            <li class="header"><p>게임용 노트북</p></li>
+            <li>아이온 게임용 노트북</li>
+            <li class="header"><p>울트라북</p></li>
+            <li>헬로키티 울트라북</li>
+        </ul>
+        <ul class="column_2">
+            <li>둘리 울트라북</li>
+            <li class="header"><p>노트북 가방</p></li>
+            <li>솜사탕 브랜드 노트북 가방</li>
+            <li class="header"><p>받침대/쿨러</p></li>
+            <li>아이바네즈 받침대</li>
+        </ul>
+        <ul class="column_3">
+            <li class="header"><p>노트북 보호 용품</p></li>
+            <li>Node.js 방열 보호판</li>
+            <li class="header"><p>맥북</li>
+            <li>원고를 작성하는 맥북 에어</li>
+            <li class="header"><p>노트북 보호 용품</p></li>
+            <li>물건 이름 만들기 힘들어</li>
+        </ul>
+        <ul class="column_4">
+            <li>우주 방사능 보호 코팅제</li>
+            <li class="header"><p>노트북 보조 용품</p></li>
+            <li>초특가</li>
+        </ul>
+        <ul class="column_5">
+            <li>미오 베이스 장치</li>/li>   
+            <li class="header"><p>외장 하드 디스크</p></li>
+            <li>토시바 500GB 외장 하드</li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <figure id="product_image">
+            <img src="http://placehold.it/980x440" />
+        </figure>
+        <section id="product_section">
+            <article id="product_article">
+                <img src="http://placehold.it/795x400" />
+
+            </article>
+            <aside id="product_aside">
+                <a href="#"><img src="http://placehold.it/170x200" /></a>
+                <a href="#"><img src="http://placehold.it/170x200" /></a>
+
+            </aside>
+        </section>
+    </div>
+
+<!-- 본문 상품 목록 -->
+    <table cellspacing=20 cellpadding=0 class="prdtable" >
+        <tr>
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=F9755&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">스티치 라운드 반팔티</a></dt>
+                <dd class="content1">「 소장하고 싶은 그남자의 티셔츠~! 」<br><br></dd>
+                <dd class="price">18,000원</dd>
+            </dl>
+        </td>                                               
+
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=FCC0F&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">올드캡틴 단가라 반팔티</a></dt>
+                <dd class="content1">「 가.성.비 최고!!만족감 UPUP 」<br><br></dd>
+                <dd class="price">8,000원</dd>
+            </dl>
+        </td>                                               
+
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=FC58F&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">빌리브 데미지 워싱데님</a></dt>
+                <dd class="content1">「S~XL 빅사이즈 / 여름에 알맞은 컬러」<br><br></dd>
+                <dd class="price">29,000원</dd>
+            </dl>
+        </td>                                               
+
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=F8D98&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">도트 슬라브 반팔티</a></dt>
+                <dd class="content1">「 빈티지한 도트 패턴의 아이템 」<br><br></dd>
+                <dd class="price">19,000원</dd>
+            </dl>
+        </td>                               
+        </tr>
+
+        <tr>
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=F9755&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">스티치 라운드 반팔티</a></dt>
+                <dd class="content1">「 소장하고 싶은 그남자의 티셔츠~! 」<br><br></dd>
+                <dd class="price">18,000원</dd>
+            </dl>
+        </td>                                               
+
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=FCC0F&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">올드캡틴 단가라 반팔티</a></dt>
+                <dd class="content1">「 가.성.비 최고!!만족감 UPUP 」<br><br></dd>
+                <dd class="price">8,000원</dd>
+            </dl>
+        </td>                                               
+
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=FC58F&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">빌리브 데미지 워싱데님</a></dt>
+                <dd class="content1">「S~XL 빅사이즈 / 여름에 알맞은 컬러」<br><br></dd>
+                <dd class="price">29,000원</dd>
+            </dl>
+        </td>                                               
+
+        <td class="prdlist">
+            <dl>
+                <dd class="prd_img"><div class="img"><a href="#"><img src="http://placehold.it/220x350" /></a></div></dd>
+                <dt><a href="/shop/detail.php?hash=F8D98&cno=2010000&rURL=http%3A%2F%2Fwww.mutnam.com%2F">도트 슬라브 반팔티</a></dt>
+                <dd class="content1">「 빈티지한 도트 패턴의 아이템 」<br><br></dd>
+                <dd class="price">19,000원</dd>
+            </dl>
+        </td>                               
+        </tr>
+
+    </table>
+
+    <!-- 로그인 -->
+    <div id="login">
+        <h2>▶ 회원가입</h2>
+<form  name="mem_form" method="post" action="mem_print.php">
+  <input type="hidden" name="title" value="회원가입 양식"> 
+  <table border="0" width="640" cellspacing="1" cellpadding="4">
+  <tr>
+    <td align="right">* 아이디 :</td>
+    <td><input type="text" size="15" maxlength="12" name="id" value="guest"></td>
+  </tr>
+  <tr>
+    <td align="right" > * 이름 :</td>
+    <td><input type="text" size="15" maxlength="12" name="name"></td>
+  </tr>
+  <tr>
+    <td align="right"> * 비밀번호 :</td>
+    <td><input type="password" size="15" maxlength="10" name="passwd"  value="1234"></td>
+  </tr>
+  <tr>
+    <td align="right"> * 비밀번호 확인 :</td>
+    <td><input type="password" size="15" maxlength="12" 
+                    name="passwd_confirm"></td>
+  </tr>
+  <tr>
+    <td align="right">성별 :</td>
+    <td><input type="radio" name="gender" value="M" checked>남
+        <input type="radio" name="gender" value="F">여</td>
+  </tr>
+  <tr>
+    <td align="right">휴대전화 :</td>
+    <td><select name="phone1">
+           <option>선택</option>
+           <option value="010">010</option>
+           <option value="011">011</option>
+           <option value="017">017</option>
+        </select> - 
+        <input type="text" size="4" name="phone2" maxlength="4"> -
+        <input type="text" size="4" name="phone3" maxlength="4"></td>
+  </tr>
+  <tr>
+    <td align="right">주 소 :</td>
+    <td><input type="text" size="50" name="address"></td>
+  </tr>
+  <tr>
+    <td align="right">취 미 :</td>
+    <td>
+       <input type="checkbox" name="movie" value="yes" checked>영화감상 &nbsp;  
+       <input type="checkbox" name="book" value="yes" >독서 &nbsp; 
+       <input type="checkbox" name="shop" value="yes" >쇼핑 &nbsp; 
+       <input type="checkbox" name="sport" value="yes" checked>운동
+    </td>
+  </tr>
+  <tr>
+    <td align="right">자기소개 :</td>
+    <td><textarea name="intro" rows="5" cols="60"></textarea></td>
+  </tr>
+  </table>
+  <br>
+  <table border="0"  width="640">
+     <tr><td align="center">
+         <input type="submit" value="확인">
+         <input type="reset" value="다시작성"></td>
+     </tr>
+  </table>
+</form>
+    </div>
+
+    <footer id="main_footer">
+        <p>고객만족센터 1688-0000 ( 월-금 10:00 ~ 17:00 / 점심시간 13:00 ~ 14:00 )</p>
+        <p>대표이사 : 홍길동 | 사업자정보 확인 | 사업자등록번호 : 000-00-00000 | 통신판매업 신고번호 : 제 0000-대한민국-0000 | Hosting by WISA</p>
+        <p>고객님은 안전거래를 위해 현금으로 결제시 저희 쇼핑몰에서 가입한 LG유플러스 구매안전 서비스를 이용하실 수 있습니다.</p>
+
+COPYRIGHT© 2004 BY MUTNAM.COM. ALL RIGHTS RESERVED.<p>
+    </footer>
+</body>
+</html>
