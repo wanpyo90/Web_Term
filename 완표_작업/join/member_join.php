@@ -5,9 +5,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
+  <!-- 버튼 -->
+      <a href="login.php"><img src="img/login.JPG"></a>
+      <a href="member_join.php"><img src="img/join.JPG"></a>
+      <a href="member_modify.php"><img src="img/mypage.JPG"></a>
+
 <h2>회원가입</h2>
 <form action = "member_join.php?mode=member_insert" method='post'>
-  <input type="hidden" name="title" value="회원가입 양식"> 
+  <input type="hidden" name="title" value="회원가입 양식">
   <table border="1" width="640" cellspacing="1" cellpadding="4">
   <tr>
     <td align="right">이름 :</td>
@@ -74,14 +79,14 @@
   </tr>
   <tr>
     <td align="right">휴대전화 :</td>
-    <td><select name="phone1">
+    <td><select name="phone_1">
            <option>선택</option>
            <option value="010">010</option>
            <option value="011">011</option>
            <option value="017">017</option>
-        </select> - 
-        <input type="text" size="4" name="phone2" maxlength="4"> -
-        <input type="text" size="4" name="phone3" maxlength="4"></td>
+        </select> -
+        <input type="text" size="4" name="phone_2" maxlength="4"> -
+        <input type="text" size="4" name="phone_3" maxlength="4"></td>
   </tr>
   <tr>
     <td align="right">주소 :</td>
@@ -105,14 +110,15 @@ include "db_connect.php";
 // 테이블 개인적으로 추가할 것. - member_create.sql
 if( $mode == "member_insert" )  {
   if($passwd != $passwd_confirm)  {
-    echo "비밀번호 다시 입력하세요<br>"; 
-  } else if( $name==NULL || $id==NULL || $passwd==NULL || $passwd_confirm==NULL || $email==NULL || $birth_sum==NULL || $gender==NULL || $phone_sum==NULL || $address==NULL )  {
+    echo "비밀번호 다시 입력하세요<br>";
+  } else if( $name==NULL || $id==NULL || $passwd==NULL || $passwd_confirm==NULL || $email==NULL || $birth_3==NULL || $birth_2==NULL || $birth_1==NULL || $gender==NULL || $phone_1==NULL || $phone_2==NULL || $phone_3==NULL || $address==NULL )  {
     echo "빈칸을 체우세요.";
   } else {
     $birth_sum = "$birth_1/$birth_2/$birth_3";
-    $phone_sum = "$phone1-$phone2-$phone3";
+    $phone_sum = "$phone_1-$phone_2-$phone_3";
+    $regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
 
-    $sql = "insert into member values('$name', '$id', '$passwd', '$email', '$birth_sum', '$gender', '$phone_sum', '$address');";
+    $sql = "insert into member values('$name', '$id', '$passwd', '$email', '$birth_sum', '$gender', '$phone_sum', '$address', '$regist_day');";
 
     $result = mysql_query($sql);
     if($result) {

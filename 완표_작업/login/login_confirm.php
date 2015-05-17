@@ -32,7 +32,7 @@
 
    $num_match = mysql_num_rows($result);
 
-   if(!$num_match) 
+   if(!$num_match)
    {
      echo("
            <script>
@@ -66,12 +66,12 @@
            $_SESSION['userid'] = $userid;
            $_SESSION['username'] = $username;
 
-/* 메인으로 화면 이동
+ // 메인으로 화면 이동
            echo("
               <script>
-                location.href = '../index.php';
+                location.href = 'main.php';
               </script>
-           ");*/
+           ");
         }
-   }          
+   }
 ?>
